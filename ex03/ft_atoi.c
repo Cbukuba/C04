@@ -31,7 +31,7 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		ent = ent * 10 + (str[i] - 48);
+		ent = ent * 10 + str[i] - 48;
 		i ++;
 	}
 	return (ent * sign);
@@ -41,6 +41,6 @@ int	ft_atoi(char *str)
 #include <stdio.h>
 int main(int argc, char **argv)
 {
-	char a[] = " ---+--+1234ab567";
+	char a[] = " ---+--+1";
 	printf("%d", ft_atoi(a));
 }*/
