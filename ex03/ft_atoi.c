@@ -19,11 +19,8 @@ int	ft_atoi(char *str)
 	i = 0;
 	sign = 1;
 	ent = 0;
-	while ((str[i] == 32 || str[i] == 9)
-		|| (str[i] == 10 || str[i] == 11) || (str[i] == 12))
-	{
+	while ((str[i] == 32) || (str[i] >= 9 && str[i] <= 13))
 		i ++;
-	}
 	while (str[i] == '-' || str[i] == '+')
 	{
 		sign *= -1 ;
@@ -31,16 +28,15 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= 48 && str[i] <= 57)
 	{
-		ent = ent * 10 + str[i] - 48;
+		ent = ent * 10 + (str[i] - 48);
 		i ++;
 	}
 	return (ent * sign);
 }
 
-/*#include <stdlib.h>
-#include <stdio.h>
-int main(int argc, char **argv)
-{
-	char a[] = " ---+--+1";
-	printf("%d", ft_atoi(a));
-}*/
+// #include <stdlib.h>
+// #include <stdio.h>
+// int main()
+// {
+// 	printf("%d", ft_atoi(" \r\n\t\f---21+--+1234ab567"));
+// }
